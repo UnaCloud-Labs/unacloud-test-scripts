@@ -39,6 +39,6 @@ git clone "https://github.com/adelavegaf/fibonacci-test-suite.git"
 cd "fibonacci-test-suite"
 
 printf "%s\n" "Generating Fibonacci executable from fibonacci-test-suite repository"
-gcc fibonacci.c -o fibonacci
+gcc -std=c99 fibonacci.c -o fibonacci
 mv fibonacci ../bin/
 
