@@ -7,7 +7,7 @@ CGROUP="$2"
 
 for ((i=0; i<NUM_PROCESSES; i=i+1))
 do
-    cgexec -g cpu/cpu-limit-"$CGROUP" './unacloud-test-files/bin/fibonacci' 200000000 80 23416728348467685 &
+    cgexec -g "cpu:cpu-limit-${CGROUP}" './unacloud-test-files/bin/fibonacci' 200000000 80 23416728348467685 &
 done
 
 wait

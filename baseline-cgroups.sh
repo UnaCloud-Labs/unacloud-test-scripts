@@ -9,6 +9,7 @@ do
     do
         for ((k=10; k<=100; k=k+10))
         do
+            printf '%s\n' "Running Fibonacci with ${i} foreground, ${j} background, cgroup: cpu:cpu-limit-${k}."
             (time ./run-fibonacci-cgroups.sh "$i" "$FOREGROUND_CGROUP") > "foreground_${i}_${j}_${k}.txt" 2>&1 &
             (time ./run-fibonacci-cgroups.sh "$j" "$k") > "background_${i}_${j}_${k}.txt" 2>&1 &
             wait
