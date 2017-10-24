@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
 # Please make sure you have ran setup.sh and setup-cgroups.sh before executing this script. Otherwise it will fail!
 NUM_PROCESSES="$1"
 CGROUP="$2"
