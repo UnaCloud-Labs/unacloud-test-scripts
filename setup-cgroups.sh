@@ -21,13 +21,13 @@ cgcreate -g cpu:/cpu-limit-90
 cgcreate -g cpu:/cpu-limit-100
 
 cgset -r cpu.shares=102 cpu-limit-10
-cgset -r cpu.shares=204 cpu-limit-10
-cgset -r cpu.shares=307 cpu-limit-10
-cgset -r cpu.shares=409 cpu-limit-10
-cgset -r cpu.shares=512 cpu-limit-10
-cgset -r cpu.shares=614 cpu-limit-10
-cgset -r cpu.shares=716 cpu-limit-10
-cgset -r cpu.shares=819 cpu-limit-10
-cgset -r cpu.shares=921 cpu-limit-10
-cgset -r cpu.shares=1024 cpu-limit-10
+cgset -r cpu.shares=204 cpu-limit-20
+cgset -r cpu.shares=307 cpu-limit-30
+cgset -r cpu.shares=409 cpu-limit-40
+cgset -r cpu.shares=512 cpu-limit-50
+cgset -r cpu.shares=614 cpu-limit-60
+cgset -r cpu.shares=716 cpu-limit-70
+cgset -r cpu.shares=819 cpu-limit-80
+cgset -r cpu.shares=921 cpu-limit-90
+cgset -r cpu.shares=1024 cpu-limit-100
 
