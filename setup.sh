@@ -12,6 +12,12 @@ then
     exit 1
 fi
 
+if ! hash make 2>/dev/null
+then
+    printf '%s\n' "This script requires make to be installed. Please run apt-get install make and run again."
+    exit 1
+fi
+
 if [ ! -d "./unacloud-test-files" ]
 then
     mkdir "./unacloud-test-files"
@@ -25,14 +31,10 @@ if [ ! -d "bin" ]
 then
     mkdir "bin"
 else
-    printf '%s/n' "Found bin directory."
+    printf '%s\n' "Found bin directory."
 fi
 
 echo "The files contained in unacloud-test-files will be used to test the unacloud task scheduler" >> README
-
-printf '%s\n' "Downloading the DaCapo benchmarks"
-curl -o  dacapo.jar "https://downloads.sourceforge.net/project/dacapobench/9.12-bach/dacapo-9.12-bach.jar?r=&ts=1503599152&use_mirror=superb-dca2"
-mv dacapo.jar ./bin
 
 printf '%s\n' "Cloning fibonacci test suite repository"
 git clone "https://github.com/adelavegaf/fibonacci-test-suite.git"
@@ -42,3 +44,10 @@ printf "%s\n" "Generating Fibonacci executable from fibonacci-test-suite reposit
 gcc -std=c99 fibonacci.c -o fibonacci
 mv fibonacci ../bin/
 
+printf '%s\n' "Cloning the unacloud task tools repository"
+git clone "https://github.com/UnaCloud-Labs/unacloud-task-tools.git"
+cd "unacloud-task-tools"
+
+printf "%s\n" "Generating register_uc executable from unacloud-task-tools repository"
+make
+mv register_uc ../bin/

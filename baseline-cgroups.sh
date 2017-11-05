@@ -13,7 +13,7 @@ do
             (time ./run-fibonacci-cgroups.sh "$i" "$FOREGROUND_CGROUP") > "foreground_${i}_${j}_${k}.txt" 2>&1 &
             (time ./run-fibonacci-cgroups.sh "$j" "$k") > "background_${i}_${j}_${k}.txt" 2>&1 &
             wait
-            sleep 1m
+            sleep 30
         done
     done
 done
