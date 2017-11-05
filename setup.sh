@@ -44,6 +44,8 @@ printf "%s\n" "Generating Fibonacci executable from fibonacci-test-suite reposit
 gcc -std=c99 fibonacci.c -o fibonacci
 mv fibonacci ../bin/
 
+cd ..
+
 printf '%s\n' "Cloning the unacloud task tools repository"
 git clone "https://github.com/UnaCloud-Labs/unacloud-task-tools.git"
 cd "unacloud-task-tools"
