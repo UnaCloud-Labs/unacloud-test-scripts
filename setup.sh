@@ -18,6 +18,12 @@ then
     exit 1
 fi
 
+if ! hash cpulimit 2>/dev/null
+then
+    printf '%s\n' "This script requires cpulimit to be installed. Please run apt-get install cpulimit and run again."
+    exit 1
+fi
+
 if [ ! -d "./unacloud-test-files" ]
 then
     mkdir "./unacloud-test-files"
